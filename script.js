@@ -17,6 +17,8 @@ let usciti = []; // array dei numeri già estratti
 */
 
 const tabellone = document.querySelector("#tabellone");
+const ultimoNumero = document.querySelector("#ultimo-numero")
+const btnEstrai = document.querySelector("estrai")
 
 //crea griglia
 rendiTabellone = () => {
@@ -49,5 +51,17 @@ estrai = () => {
     }
   }
   
+  if(disponibili.length === 0) {
+    alert("Tutti i numeri sono usciti!");
+    return;
+  }
 }
+
+const randomNum = Math.floor(Math.random() * disponibili.length);
+const numeroEstratto = disponibili[randomNum];
+
+usciti.push(numeroEstratto);
+
+ultimoNumero.innerText = numeroEstratto;
+btnEstrai.addEventListener("click", estrai)
 
