@@ -75,6 +75,7 @@ creaTabellone();
 
 reset.addEventListener("click", (event) =>{
   event.preventDefault();
+  cronologiaNumeri = [];
   allNumbers = [];
   creaTabellone();
   render()
